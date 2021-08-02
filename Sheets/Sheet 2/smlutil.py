@@ -45,8 +45,8 @@ def plot_learning_curves(learner, X, y, ax = None, train_portions = [0.05, 0.1, 
     if ax is None:
         fig, ax = plt.subplots()
     x_axis = np.round(len(X) * np.array(train_portions)).astype(int)
-    ax.plot(x_axis, scores_in, label="in-sample-error")
-    ax.plot(x_axis, scores_val, label="out-of-sample-error")
+    ax.plot(x_axis, scores_in, label="in-sample-error"+learner.getName())
+    ax.plot(x_axis, scores_val, label="out-of-sample-error"+learner.getName())
     ax.set_ylim([0,1])
     ax.legend()
     return ax
